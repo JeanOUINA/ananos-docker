@@ -2,7 +2,7 @@ services:
   ananos-node:
     build: ./ananos-node
     volumes:
-      - ./docker-data:/root
+      - ananos_data:/root
     ports:
       # Communicating with other nodes
       - 0.0.0.0:7175:7175
@@ -12,3 +12,7 @@ services:
       - 127.0.0.1:7177:7177
       # WS RPC
       - 127.0.0.1:7178:7178
+
+volumes:
+  ananos_data:
+    driver: local
