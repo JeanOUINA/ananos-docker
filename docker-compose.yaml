@@ -2,7 +2,10 @@ services:
   ananos-node:
     build: ./ananos-node
     volumes:
-      - ./data:/root
+      - type: bind
+        source: ./data
+        target: /root/Ananos
+        is_directory: true
     ports:
       # Communicating with other nodes
       - 0.0.0.0:7175:7175
