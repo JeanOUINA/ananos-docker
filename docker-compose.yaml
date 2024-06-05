@@ -22,8 +22,9 @@ services:
 
   ananos-rpc-proxy:
     image: notthomiz/ananos-rpc-proxy:1.0.2
-    ports:
-      - 8080:8080
+    environment:
+      # For coolify to automatically give a port
+      - SERVICE_FQDN_RPCPROXY_8080
     volumes:
       - type: bind
         source: ./proxy
