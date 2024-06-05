@@ -2,7 +2,7 @@ services:
   ananos-node:
     build: ./ananos-node
     volumes:
-      - ananos_data:/root
+      - ./data:/root
     ports:
       # Communicating with other nodes
       - 0.0.0.0:7175:7175
