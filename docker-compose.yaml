@@ -11,14 +11,6 @@ services:
     ports:
       # Communicating with other nodes
       - 0.0.0.0:7175:7175
-      # HTTP RPC
-      - 127.0.0.1:7176:7176
-      # IPC RPC
-      - 127.0.0.1:7177:7177
-      # WS RPC
-      - 127.0.0.1:7178:7178
-    networks:
-      - ananos-network
 
   ananos-rpc-proxy:
     image: notthomiz/ananos-rpc-proxy:1.0.2
@@ -30,8 +22,3 @@ services:
         source: ./proxy
         target: /data
         is_directory: true
-    networks:
-      - ananos-network
-
-networks:
-  ananos-network: {}
